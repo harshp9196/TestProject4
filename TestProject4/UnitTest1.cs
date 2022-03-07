@@ -33,7 +33,8 @@ namespace TestProject4
             //            pl.ClickExpolreBtn();
 
 
-         
+            //IWebElement popupMessage = driver.FindElement(By.ClassName("popup-message"));
+
 
             //Assert
                  Assert.AreEqual("Exploring Earth", driver.FindElement(By.ClassName("popup-message")).Text);
