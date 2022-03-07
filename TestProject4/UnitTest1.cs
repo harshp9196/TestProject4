@@ -37,7 +37,7 @@ namespace TestProject4
 
 
             //Assert
-                 Assert.AreEqual("Exploring Earth", driver.FindElement(By.ClassName("popup-message")).Text);
+                 Assert.AreEqual("Exploring hhEarth", driver.FindElement(By.ClassName("popup-message")).Text);
 
 
         }
