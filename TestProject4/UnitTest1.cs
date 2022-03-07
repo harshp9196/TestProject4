@@ -1,7 +1,9 @@
+using System;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Remote;
 
 namespace TestProject4
 {
@@ -12,32 +14,30 @@ namespace TestProject4
      [TestMethod]
         public void Playground_verifyForms()
         {
-
+            //IwebElement iwebElement = (IwebElement)driver.FindElement(By.TagName("h1"));
             //Arrange 
-
+            //Assert.IsTrue(true);
           
-            //Forms formspage = new Forms(driver);
-             //formspage.OpenPage();
-             //formspage.enterName();
-             //formspage.enterEmail();
-            //formspage.selectState();
-            //formspage.clickAgree();
-            //formspage.clickSubmitBtn ();
+            Forms formspage = new Forms(driver);
+             formspage.OpenPage();
+             formspage.enterName();
+             formspage.enterEmail();
+            formspage.selectState();
+            formspage.clickAgree();
+            formspage.clickSubmitBtn ();
+            Assert.IsTrue(true);
             //
             ///fdg
             ///
-        //    Planet pl = new Planet(driver);
-//            pl.ClickExpolreBtn();
+            //  Planet pl = new Planet(driver);
+            //            pl.ClickExpolreBtn();
 
 
             //IWebElement popupMessage = driver.FindElement(By.ClassName("popup-message"));
 
 
-
-            ;
-
             //Assert
-            Assert.AreEqual("Exploring Earth", driver.FindElement(By.ClassName("popup-message")).Text);
+                 Assert.AreEqual("Exploring Earth", driver.FindElement(By.ClassName("popup-message")).Text);
 
 
         }
@@ -45,8 +45,11 @@ namespace TestProject4
         [TestInitialize()]
         public void setup()
         {
-            driver = new ChromeDriver(@"C:\Tools\chromedriver98");
-            driver.Url = "https://d18u5zoaatmpxx.cloudfront.net/#/planets";
+            var options = new ChromeOptions();
+            driver = new RemoteWebDriver(new Uri("http://localhost:4444/wd/hub"), options)
+            {
+                Url = "https://d18u5zoaatmpxx.cloudfront.net/#/forms"
+            };
             driver.Manage().Window.Maximize();
 
         }
@@ -54,7 +57,7 @@ namespace TestProject4
         [TestCleanup()]
         public void Cleanup()
         {
-          //  driver.Quit();
+            driver.Quit();
         }
     }
 

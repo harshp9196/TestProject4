@@ -15,7 +15,6 @@ namespace TestProject4
 
         internal IEnumerable<Planet> getPlantes()
         {
-           
             var   allPlanets = driver.FindElements(By.ClassName("planet"));
             foreach (IWebElement  planet in allPlanets)
             {

@@ -4,6 +4,7 @@ using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Remote;
 
 namespace TestProject4
 {
@@ -30,13 +31,14 @@ namespace TestProject4
             PlanetPage planetPage = new PlanetPage(driver);
             planetPage.getPlantes();
             //planetPage.farrestPlanet();
-            planetPage.GetPlant(p => p.Distance == 12332);
+        //   planetPage.GetPlant(p => p.Distance == 12332);
         }
 
         [TestInitialize()]
         public void Setup()
         {
-            driver = new ChromeDriver(@"C:\Tools\chromedriver98");
+            var options  = new ChromeOptions();
+            driver = new RemoteWebDriver(new Uri("http://localhost:4444/wd/hub"), options);
             driver.Url = "https://d18u5zoaatmpxx.cloudfront.net/#/planets";
             driver.Manage().Window.Maximize();
         }
