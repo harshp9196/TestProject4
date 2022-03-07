@@ -25,7 +25,7 @@ namespace TestProject4
             formspage.selectState();
             formspage.clickAgree();
             formspage.clickSubmitBtn ();
-            Assert.IsTrue(true);
+            Assert.IsTrue(false);
             //
             ///fdg
             ///
@@ -37,7 +37,7 @@ namespace TestProject4
 
 
             //Assert
-                 Assert.AreEqual("Exploring hhEarth", driver.FindElement(By.ClassName("popup-message")).Text);
+              //   Assert.AreEqual("Exploring hhEarth", driver.FindElement(By.ClassName("popup-message")).Text);
 
 
         }
