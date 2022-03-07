@@ -16,8 +16,7 @@ namespace TestProject4
         {
             //IwebElement iwebElement = (IwebElement)driver.FindElement(By.TagName("h1"));
             //Arrange 
-            //Assert.IsTrue(true);
-          
+          //Assert.IsTrue(true); 
             Forms formspage = new Forms(driver);
              formspage.OpenPage();
              formspage.enterName();
@@ -26,20 +25,7 @@ namespace TestProject4
             formspage.clickAgree();
             formspage.clickSubmitBtn ();
             Assert.IsTrue(false);
-            //
-            ///fdg
-            ///
-            //  Planet pl = new Planet(driver);
-            //            pl.ClickExpolreBtn();
-
-
-            //IWebElement popupMessage = driver.FindElement(By.ClassName("popup-message"));
-
-
-            //Assert
-              //   Assert.AreEqual("Exploring hhEarth", driver.FindElement(By.ClassName("popup-message")).Text);
-
-
+           
         }
 
         [TestInitialize()]
